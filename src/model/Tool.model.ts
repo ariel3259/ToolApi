@@ -16,4 +16,5 @@ export default class Tool extends Model{
 
   @Column({ defaultValue: true })
   state: boolean
+
 }
