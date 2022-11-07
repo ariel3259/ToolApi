@@ -1,23 +1,22 @@
 import { Model, Column, Table } from 'sequelize-typescript';
 
 @Table
-export default class Tool extends Model{
+export default class Tool extends Model {
   @Column
-  name: string
-  
-  @Column
-  sectionId: number
-  
-  @Column
-  typeId: number
+  name: string;
 
   @Column
-  enterpriseId: number
+  sectionId: number;
+
+  @Column
+  typeId: number;
+
+  @Column
+  enterpriseId: number;
 
   @Column({ defaultValue: true })
-  state: boolean
+  state: boolean;
 
   @Column
-  adminId: string
-
+  adminId: string;
 }

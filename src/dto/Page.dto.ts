@@ -1,4 +1,4 @@
-export default class Page<T>{
-  elements: T[]
-  totalItems: number
+export default class Page<T> {
+  elements: T[];
+  totalItems: number;
 }

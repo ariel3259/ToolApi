@@ -1,4 +1,4 @@
 export default class SectionToolDto {
-  section: string
-  adminId?: string
+  section: string;
+  adminId?: string;
 }

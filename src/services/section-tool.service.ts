@@ -15,51 +15,56 @@ export default class SectionToolService {
       offset,
       limit,
       where: { state: true },
-    })
+    });
     const totalItems: number = await this.sectionTool.count({
-      where: { state: true }
-    })
+      where: { state: true },
+    });
     return {
       elements: sectionsTool,
-      totalItems
-    }
+      totalItems,
+    };
   }
 
   async save(sectionTool: SectionToolDto): Promise<SectionTool> {
     const sectionToolSaved: SectionTool = await this.sectionTool.create({
       ...sectionTool,
-    })
-    return sectionToolSaved
+    });
+    return sectionToolSaved;
   }
 
   async update(sectionTool: SectionToolDto, id: number): Promise<SectionTool> {
-    await this.sectionTool.update({
+    await this.sectionTool.update(
+      {
         ...sectionTool,
       },
       {
         where: {
           id,
-          state: true  
-        }
-      })
+          state: true,
+        },
+      },
+    );
     const sectionToolModified: SectionTool = await this.sectionTool.findOne({
       where: {
         id,
-        state: true
-      }
-    })
-    return sectionToolModified
+        state: true,
+      },
+    });
+    return sectionToolModified;
   }
 
   async delete(id: number, adminId: string): Promise<void> {
     await this.sectionTool.update(
-      { state: false },
+      {
+        state: false,
+        adminId,
+      },
       {
         where: {
           id,
-          adminId,
           state: true,
-        }
-      })
+        },
+      },
+    );
   }
 }
