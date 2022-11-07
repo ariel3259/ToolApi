@@ -1,4 +1,4 @@
-import { Model, Column, Table, HasOne } from 'sequelize-typescript'
+import { Model, Column, Table } from 'sequelize-typescript'
 
 @Table
 export default class ResourceTool extends Model {
@@ -8,7 +8,11 @@ export default class ResourceTool extends Model {
 
   @Column
   link: string
-  
+
+  @Column
+  adminId: number
+
   @Column
   state: boolean
+
 }
